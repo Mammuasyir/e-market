@@ -20,7 +20,6 @@ class WelcomeActivity : AppCompatActivity() {
 
         sPH = SharedPreference(this)
         binding.btnLogin.setOnClickListener {
-            sPH.setStatusLogin(true)
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.RegisterActivity">
-
+    tools:context=".activity.LoginActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,17 +20,19 @@
             android:textAlignment="center"
             android:textSize="25sp" />
 
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_email_login"
+                android:id="@+id/edt_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email" />
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -40,7 +41,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_pass_login"
+                android:id="@+id/edt_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
@@ -55,17 +56,12 @@
             android:backgroundTint="@color/teal_700"
             android:text="Login" />
 
-        <TextView
-            android:id="@+id/tv_isi_dummy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Data Dummy"
-            android:textAlignment="center"
-            android:textColor="#2196F3"
-            android:textSize="16dp" />
-
     </LinearLayout>
 
-
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
 </RelativeLayout>

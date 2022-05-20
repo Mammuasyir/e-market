@@ -1,10 +1,12 @@
 package com.febryan.e_market.fragment
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -14,19 +16,14 @@ import com.febryan.e_market.R
 import com.febryan.e_market.activity.WelcomeActivity
 import com.febryan.e_market.databinding.FragmentNotificationsBinding
 import com.febryan.e_market.helper.SharedPreference
-import kotlinx.android.synthetic.main.activity_welcome.*
-import kotlinx.android.synthetic.main.fragment_notifications.*
 
 class NotificationsFragment : Fragment() {
 
+    lateinit var sPH: SharedPreference
+    lateinit var btnKeluar: Button
+    lateinit var namaUser: TextView
+    lateinit var emailUser: TextView
 
-    lateinit var sph: SharedPreference
-    lateinit var btnLogout: TextView
-    private var _binding: FragmentNotificationsBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,25 +34,30 @@ class NotificationsFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_notifications, container,false)
 
         init(view)
-        sph= SharedPreference(requireActivity())
 
-        btnLogout.setOnClickListener {
-            sph.setStatusLogin(false)
-            Toast.makeText(activity, "Berhasil logout", Toast.LENGTH_SHORT).show()
+        sPH = SharedPreference(requireActivity())
+        btnKeluar.setOnClickListener {
+            sPH.setStatusLogin(false)
+            Toast.makeText(activity, "Anda Berhasil Keluar", Toast.LENGTH_SHORT).show()
             startActivity(Intent(activity, WelcomeActivity::class.java))
-            activity?.finishAffinity()
+            activity?.finish()
         }
 
+        setUser()
         return view
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun setUser() {
+        val user = sPH.getUser()
+        namaUser.text = user?.name
+        emailUser.text = user?.email
     }
 
-    private fun init(view: View){
-        btnLogout = view.findViewById(R.id.tv_logout)
+    private fun init(view: View) {
+        btnKeluar = view.findViewById<Button>(R.id.logout)
+        namaUser = view.findViewById<TextView>(R.id.tv_nama)
+        emailUser = view.findViewById<TextView>(R.id.tv_email)
+
     }
 }

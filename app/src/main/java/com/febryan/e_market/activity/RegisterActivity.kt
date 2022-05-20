@@ -1,10 +1,14 @@
 package com.febryan.e_market.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.febryan.e_market.MainActivity
 import com.febryan.e_market.R
 import com.febryan.e_market.api.ApiConfig
+import com.febryan.e_market.fragment.HomeFragment
+import com.febryan.e_market.helper.SharedPreference
 import com.febryan.e_market.model.ResponseUser
 import kotlinx.android.synthetic.main.activity_register.*
 import retrofit2.Call
@@ -12,6 +16,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
+
+    lateinit var sPH: SharedPreference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +30,7 @@ class RegisterActivity : AppCompatActivity() {
         tv_isi_dummy.setOnClickListener {
             dataDummy()
         }
+        sPH = SharedPreference(this)
 
     }
 
@@ -69,20 +76,25 @@ class RegisterActivity : AppCompatActivity() {
 
                     val respon = response.body()
 
-
                     if (respon != null) {
                         if (respon.status == 0) {
+                            startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
                             Toast.makeText(
                                 this@RegisterActivity,
                                 respon.message,
                                 Toast.LENGTH_SHORT
                             ).show()
                         } else {
+                            sPH.setStatusLogin(true)
+                            sPH.setUser(respon.data!!)
+                            val i = Intent(this@RegisterActivity, MainActivity::class.java)
                             Toast.makeText(
                                 this@RegisterActivity,
-                                "Welcome " + respon.data?.name,
+                                respon.message,
                                 Toast.LENGTH_SHORT
                             ).show()
+                            startActivity(i)
+                            finish()
                         }
                     }
 
