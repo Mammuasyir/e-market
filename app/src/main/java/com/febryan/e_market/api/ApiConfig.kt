@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiConfig {
 
-    private const val BASE_URL = "http://192.168.100.105/MyApi/public/api/"
+    private const val BASE_URL = "http://192.168.100.236/api-emarket/public/api/"
 
     private val client: Retrofit
 

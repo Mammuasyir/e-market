@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Pro/AndroidStudioProjects/eMarket 2/app/src/main/res/drawable/ic_baseline_business_24.xml" value="0.1285" />
+        <entry key="..\:/Users/Pro/AndroidStudioProjects/eMarket 2/app/src/main/res/drawable/ic_baseline_chevron_right_24.xml" value="0.1285" />
+        <entry key="..\:/Users/Pro/AndroidStudioProjects/eMarket 2/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.1285" />
         <entry key="..\:/Users/Pro/AndroidStudioProjects/eMarket 2/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/Pro/AndroidStudioProjects/eMarket 2/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/Pro/AndroidStudioProjects/eMarket 2/app/src/main/res/layout/fragment_dashboard.xml" value="0.1109375" />
-        <entry key="..\:/Users/Pro/AndroidStudioProjects/eMarket 2/app/src/main/res/layout/fragment_notifications.xml" value="0.1109375" />
+        <entry key="..\:/Users/Pro/AndroidStudioProjects/eMarket 2/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/Pro/AndroidStudioProjects/eMarket 2/app/src/main/res/layout/fragment_notifications.xml" value="0.20411663807890223" />
+        <entry key="..\:/Users/Pro/AndroidStudioProjects/eMarket 2/app/src/main/res/layout/item_row_produk.xml" value="0.17255434782608695" />
         <entry key="..\:/Users/Pro/Downloads/eMarket 2/app/src/main/res/layout/activity_login.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Pro/Downloads/eMarket 2/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Pro/Downloads/eMarket 2/app/src/main/res/layout/activity_welcome.xml" value="0.15534420289855072" />
